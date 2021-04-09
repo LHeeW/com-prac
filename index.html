@@ -4,9 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CRUD</title>
 </head>
 <body>
-    
+    <h1>CRUD(CREATE)</h1>
+    <input id="txt" type="text">
+    <button id="btn" value="create">생성</button>
+    <div id="content"></div>
+
+    <script>
+        const arr = [];
+        let data = '';
+        document.querySelector("#btn").addEventListener('click',()=>{
+            let txt = document.querySelector('#txt').value;
+            let content = document.querySelector('#content');
+            data += '<div>';
+            data += txt;
+            data += '</div>';
+            if(txt.length > 0){
+                arr.push(data);
+                for(let value of arr){
+                    content.innerHTML = value;
+                }
+            }
+        });
+    </script>
 </body>
 </html>
